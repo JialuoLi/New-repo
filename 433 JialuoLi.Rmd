@@ -3,11 +3,11 @@ title: "new 433 HW"
 author: "Jialuo Li"
 date: "9/19/2021"
 output:
-  pdf_document: default
-  github_document:
-    df_print: paged
   html_document:
     df_print: paged
+  github_document:
+    df_print: paged
+  pdf_document: default
 ---
 
 ```{r}
