@@ -140,6 +140,12 @@ str(X)
     ##  $ OTHR_STATE_STRUC_NO_099: Factor w/ 32 levels "               ",..: 1 1 1 1 1 1 2 2 1 2 ...
     ##   [list output truncated]
 
+``` r
+hist(X$DATE_OF_INSPECT_090)
+```
+
+![](433-JialuoLi_files/figure-gfm/unnamed-chunk-1-1.png)<!-- -->
+
 # Github repository
 
-<https://github.com/JialuoLi/Myrepo>
+<https://github.com/JialuoLi/New-repo>

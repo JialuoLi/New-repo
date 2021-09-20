@@ -3,11 +3,11 @@ title: "new 433 HW"
 author: "Jialuo Li"
 date: "9/19/2021"
 output:
-  html_document:
-    df_print: paged
+  pdf_document: default
   github_document:
     df_print: paged
-  pdf_document: default
+  html_document:
+    df_print: paged
 ---
 
 ```{r}
@@ -18,10 +18,10 @@ head(X)
 tail(X)
 str(X)
 
-hist(rnorm(10))
+hist(X$DATE_OF_INSPECT_090)
 ```
 
 # Github repository
-https://github.com/JialuoLi/Myrepo
+https://github.com/JialuoLi/New-repo
 
 
