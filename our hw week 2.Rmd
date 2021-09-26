@@ -1,0 +1,54 @@
+---
+title: "our week 2"
+author: "Jialuo Li"
+date: "9/19/2021"
+output:
+  html_document:
+    df_print: paged
+  github_document:
+    df_print: paged
+  pdf_document: default
+---
+
+## (1)
+```{r include=FALSE}
+
+library(dplyr)
+
+# install.packages("nycflights13")
+library(nycflights13)
+library(ggplot2)
+library(tibble)
+```
+
+```{r}
+filter(flights,is.na(dep_time))
+```
+8255 flights have missing dep_time. seems that dep_delay, arr_time and arr_delay also have the same missing value. They may mean the delay of departure, arrive of time and delay of arrival. Bacause they are canceled thus no such values.
+
+## (2)
+```{r}
+transmute(flights,deptime=60*dep_time %/% 100+dep_time %% 100, scedtime=60*sched_dep_time %/% 100+sched_dep_time %% 100)
+  
+```
+since the thousand and hundred digit are hours, ten and unit are minute, we just need to multiply hours by 60 and add it by minute.
+
+## (3)
+```{r}
+Delay<-flights %>% group_by(year,month,day) %>% summarise(Mean = mean(arr_delay,na.rm = TRUE),cancel=sum(is.na(arr_delay)), canceled_rate=sum(is.na(arr_delay))/n())
+
+
+
+head(Delay)
+
+ggplot(data = Delay, mapping = aes(x=Mean, y=canceled_rate)) +
+  geom_point()
+```
+
+
+
+
+
+
+Seems that the canceled rate increases when the mean of delay time increases
+
