@@ -3,12 +3,16 @@ title: "our week 2"
 author: "Jialuo Li"
 date: "9/19/2021"
 output:
-  html_document:
-    df_print: paged
+  pdf_document: default
   github_document:
     df_print: paged
-  pdf_document: default
+  html_document:
+    df_print: paged
 ---
+## Git hub link:
+https://github.com/JialuoLi/New-repo
+
+it's at the bottom of the file list
 
 ## (1)
 ```{r include=FALSE}
@@ -35,7 +39,7 @@ since the thousand and hundred digit are hours, ten and unit are minute, we just
 
 ## (3)
 ```{r}
-Delay<-flights %>% group_by(year,month,day) %>% summarise(Mean = mean(arr_delay,na.rm = TRUE),cancel=sum(is.na(arr_delay)), canceled_rate=sum(is.na(arr_delay))/n())
+Delay<-flights %>% group_by(year,month,day) %>% summarise(Mean = mean(arr_delay,na.rm = TRUE),cancel=sum(is.na(arr_delay)|is.na(dep_delay)), canceled_rate=sum(is.na(arr_delay))/n())
 
 
 

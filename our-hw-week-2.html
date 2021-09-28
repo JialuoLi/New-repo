@@ -173,6 +173,11 @@ pre code {
 </div>
 
 
+<div id="git-hub-link" class="section level2">
+<h2>Git hub link:</h2>
+<p><a href="https://github.com/JialuoLi/New-repo" class="uri">https://github.com/JialuoLi/New-repo</a></p>
+<p>it’s at the bottom of the file list</p>
+</div>
 <div id="section" class="section level2">
 <h2>(1)</h2>
 <pre class="r"><code>filter(flights,is.na(dep_time))</code></pre>
@@ -195,7 +200,7 @@ pre code {
 </div>
 <div id="section-2" class="section level2">
 <h2>(3)</h2>
-<pre class="r"><code>Delay&lt;-flights %&gt;% group_by(year,month,day) %&gt;% summarise(Mean = mean(arr_delay,na.rm = TRUE),cancel=sum(is.na(arr_delay)), canceled_rate=sum(is.na(arr_delay))/n())
+<pre class="r"><code>Delay&lt;-flights %&gt;% group_by(year,month,day) %&gt;% summarise(Mean = mean(arr_delay,na.rm = TRUE),cancel=sum(is.na(arr_delay)|is.na(dep_delay)), canceled_rate=sum(is.na(arr_delay))/n())
 
 
 
